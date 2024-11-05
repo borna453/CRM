@@ -1,0 +1,17 @@
+<?php
+
+use App\Models\Report;
+
+beforeEach(function () {
+    Report::factory(10)->create([
+        'user_id' => $this->regularUser->id,
+    ]);
+});
+
+it('loads the index page without errors', function () {
+    $this->actingAs($this->regularUser);
+
+    $response = $this->get($this->tenant->route('filament.user.resources.reports.index'));
+
+    $response->assertStatus(200);
+});

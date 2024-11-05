@@ -1,0 +1,14 @@
+@import '../../vendor/archilex/filament-filter-sets/resources/css/plugin.css';
+@import '../../vendor/filament/filament/dist/theme.css';
+@import '/vendor/archilex/filament-filter-sets/resources/css/plugin.css';
+
+.fi-sidebar {
+    background-color: white !important;
+    background-color: #ffffff !important; /* For browsers that don't support the previous rule */
+    color: black !important; /* Assuming default text color is black */
+}
+
+.dark .fi-sidebar {
+    background-color: #171719 !important; /* Assuming dark mode background color */
+    color: white !important; /* Assuming dark mode text color */
+}

@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Filament\CustomActions;
+
+use Filament\Actions\Action;
+use Filament\Support\Enums\MaxWidth;
+use Illuminate\Contracts\View\View;
+use Parallax\FilamentComments\Models\FilamentComment;
+
+class AppointmentCommentAction extends Action
+{
+    public static function getDefaultName(): ?string
+    {
+        return 'comments';
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this
+            ->hiddenLabel()
+            ->icon(config('filament-comments.icons.action'))
+            ->color('gray')
+            ->badge($this->record->report?->filamentComments()->count())
+            ->slideOver()
+            ->modalContentFooter(fn (): View => view('components.appointment-comments-component'))
+            ->modalHeading(__('filament-comments::filament-comments.modal.heading'))
+            ->modalWidth(MaxWidth::Medium)
+            ->modalSubmitAction(false)
+            ->modalCancelAction(false)
+            ->visible(fn (): bool => auth()->user()->can('viewAny', FilamentComment::class));
+    }
+}

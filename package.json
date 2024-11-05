@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/typography": "^0.5.13",
+        "autoprefixer": "^10.4.19",
+        "axios": "^1.6.4",
+        "flowbite": "^2.3.0",
+        "laravel-echo": "^1.16.1",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4.38",
+        "postcss-nesting": "^12.1.2",
+        "pusher-js": "^8.4.0-rc2",
+        "tailwindcss": "^3.4.3",
+        "vite": "^5.0"
+    },
+    "dependencies": {
+        "@alpinejs/intersect": "^3.14.1",
+        "basiclightbox": "^5.0.4",
+        "canvas-confetti": "^1.9.3",
+        "flowbite-datepicker": "^1.2.6",
+        "jstimezonedetect": "^1.0.7",
+        "trix": "^2.1.5"
+    }
+}

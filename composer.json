@@ -1,0 +1,147 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The skeleton application for the Laravel framework.",
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "archilex/filament-filter-sets": "^3.6",
+        "awcodes/filament-badgeable-column": "^2.3",
+        "cloudmazing/cloudmazing-theme": "dev-main",
+        "cloudmazing/filament-email-log": "^1.0",
+        "cloudmazing/saloon-kvk": "dev-main",
+        "cloudmazing/saloon-rinkel": "*",
+        "fakerphp/faker": "^1.23",
+        "filament/filament": "^3.2",
+        "filament/infolists": "^3.2",
+        "filament/spatie-laravel-media-library-plugin": "^3.2",
+        "filament/spatie-laravel-settings-plugin": "^3.2",
+        "guava/filament-knowledge-base": "^1.10",
+        "laravel/framework": "^11.23",
+        "laravel/horizon": "^5.26",
+        "laravel/pennant": "^1.10",
+        "laravel/reverb": "@beta",
+        "laravel/tinker": "^2.9",
+        "leandrocfe/filament-apex-charts": "^3.1",
+        "mokhosh/filament-kanban": "^2.8",
+        "openai-php/laravel": "^0.10",
+        "parallax/filament-comments": "^1.2",
+        "phpsa/filament-password-reveal": "^2.1",
+        "ralphjsmit/laravel-filament-onboard": "^2.4",
+        "saade/filament-fullcalendar": "^3.2",
+        "saloonphp/laravel-plugin": "^3.5",
+        "saloonphp/saloon": "^3.9",
+        "sentry/sentry-laravel": "^4.7",
+        "solution-forest/filament-simplelightbox": "^0.0.7",
+        "spatie/icalendar-generator": "^2.8",
+        "spatie/laravel-ignition": "^2.8",
+        "spatie/laravel-medialibrary": "^11.8",
+        "spatie/laravel-permission": "^6.9",
+        "stancl/tenancy": "^3.8",
+        "stechstudio/filament-impersonate": "^3.8",
+        "tapp/filament-timezone-field": "^3.0",
+        "tomatophp/filament-artisan": "dev-master",
+        "tomatophp/filament-developer-gate": "dev-master"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.13",
+        "barryvdh/laravel-ide-helper": "^3.1",
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.26",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-livewire": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "ralphjsmit/packages": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/WH-CloudMazing/cloudmazing-theme.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/WH-CloudMazing/filament-email-log.git"
+        },
+        {
+            "type": "composer",
+            "url": "https://satis.ralphjsmit.com"
+        },
+        {
+            "type": "composer",
+            "url": "https://filament-filter-sets.composer.sh"
+        },
+        {
+            "type": "composer",
+            "url": "https://satis.ralphjsmit.com"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/WH-CloudMazing/saloon-kvk.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/WH-CloudMazing/filament-artisan.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/WH-CloudMazing/filament-developer-gate"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/WH-CloudMazing/saloon-rinkel.git"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,256 @@
+@import '../../vendor/archilex/filament-filter-sets/resources/dist/advanced-tables.css';
+@import 'basiclightbox/dist/basicLightbox.min.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.complete-button:hover {
+    color: lawngreen !important;
+}
+
+.uncomplete-button:hover {
+    color: red !important;
+}
+
+.auth-bg {
+    background-image: var(--bg);
+}
+
+[x-cloak] {
+    display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    border-color: theme('borderColor.gray.300');
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]:checked, input[type="checkbox"]:checked:hover, input[type="checkbox"]:checked:focus {
+    border-color: theme('borderColor.primary.800');
+    background-image: none;
+    background-color: #fff;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.85em;
+    height: 0.8em;
+    -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    opacity: 0;
+    transition: 120ms opacity ease-in-out;
+    transform: rotate(8deg);
+    background-color: #247676;
+    margin: -7px;
+}
+
+input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+}
+.datepicker-controls .today-btn {
+    display: none;
+}
+#leadCal .datepicker-picker {
+    box-shadow: none;
+    padding: 0;
+}
+
+#leadCal .datepicker-main {
+    padding: 1rem;
+    border: 1px solid theme('borderColor.neutral.200');
+    border-radius: 6px;
+    box-shadow: theme('boxShadow.md');
+}
+#leadCal .days-of-week {
+    border-bottom: 1px solid theme('borderColor.neutral.200');
+    margin: -1rem -1rem 1rem;
+    padding: 0.5rem 1rem;
+}
+#leadCal .days-of-week > span {
+    color: theme('colors.primary.600');
+}
+#leadCal .datepicker-cell {
+    border-radius: 100%;
+    font-size: 1rem;
+    /*color: theme('textColor.neutral.500');*/
+    font-weight: normal;
+    position: relative;
+    pointer-events: none;
+    padding: 0.5rem 0;
+}
+#leadCal .datepicker-grid {
+    width: 22rem;
+    column-gap: 16px;
+}
+#leadCal .datepicker-cell.selected {
+    /*background: white;*/
+    /*color: theme('colors.primary.600');*/
+    /*box-shadow: 0 0 0 2px inset;*/
+}
+#leadCal .datepicker-cell.next, #leadCal .datepicker-cell.prev {
+    color: theme('colors.neutral.300');
+}
+#leadCal .datepicker-header button {
+    text-transform: capitalize;
+}
+#leadCal .dow {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#leadCal .datepicker-controls .prev-btn, #leadCal .datepicker-controls .next-btn {
+    border: 1px solid theme('borderColor.neutral.200');
+    box-shadow: theme('boxShadow.sm');
+}
+#leadCal .datepicker-controls button {
+    padding: 4px;
+}
+#leadCal .datepicker-controls .view-switch {
+    pointer-events: none;
+}
+#leadCal .datepicker-grid > :nth-child(7n):not(.selected), #leadCal .datepicker-grid > :nth-child(7n-1):not(.selected) {
+    color: theme('textColor.neutral.400');
+}
+#leadCal .datepicker-event-marker {
+    --size: 6px;
+    width: var(--size);
+    height: var(--size);
+    background: theme('colors.primary.600');
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#leadCal .datepicker-cell-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.fc-day-today {
+    background: #f7f7f7 !important;
+    border: none !important;
+}
+/* Custom styles for document attachments */
+.custom-document-style {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-document-style a {
+    color: #1a202c; /* Tailwind's gray-900 */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.custom-document-style .attachment__icon {
+    margin-right: 10px;
+}
+
+.custom-document-style .attachment__caption {
+    margin-left: 10px;
+    font-size: 0.875rem; /* Tailwind's text-sm */
+}
+
+.custom-document-style .attachment__name {
+    display: block;
+}
+
+.custom-document-style .attachment__size {
+    color: #6b7280; /* Tailwind's gray-500 */
+    font-size: 0.75rem; /* Tailwind's text-xs */
+}
+
+/* Full Calendar */
+.fc-day-today {
+    background-color: #F7F7F7 !important;
+    border: none !important;
+}
+.dark .fc-day-today {
+    background-color: #0369a1 !important;
+    border: none !important;
+}
+
+
+/* Light mode glow */
+.glowing-light {
+    animation: glow-light 1s infinite alternate;
+}
+
+@keyframes glow-light {
+    from {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.dark .glowing-light {
+    animation: glow-dark 1s infinite alternate;
+}
+
+@keyframes glow-dark {
+    from {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+/* Lightbox background dim */
+.basicLightbox--visible {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+/* This targets the documents in the processContent for conversations */
+.attachment--file {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+}
+
+.attachment--file a {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+/* Common styles for all attachments */
+.attachment {
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+/* Specific styles for image attachments */
+.attachment--image {
+    border: 1px solid #e5e7eb; /* Tailwind's gray-200 */
+    border-radius: 0.5rem; /* Tailwind's rounded */
+    background-color: #f3f4f6; /* Tailwind's gray-100 */
+    transition: background-color 0.3s;
+}
+
+.attachment--image:hover {
+    background-color: #e5e7eb; /* Tailwind's gray-200 on hover */
+}
